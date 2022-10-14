@@ -1,4 +1,3 @@
-from dataclasses import asdict
 import random
 import numpy as np
 
@@ -26,7 +25,7 @@ def check_square(grid, number, index):
                 return False
     return True
 
-#using the three aboce, checks if a number is allowed on a specific index
+#using the three above, checks if a number is allowed on a specific index
 def check_index(grid, number, index):
     if (not check_line(grid, number, index)) or (not check_column(grid, number, index)) or (not check_square(grid, number, index)):
         return False
@@ -107,11 +106,12 @@ def make_me_a_sudoku(difficulty="random"):
     your_sudoku_sir = np.zeros((9,9), dtype=np.int8)
     solve_sudoku(your_sudoku_sir)
 
-    if difficulty == "easy":
+    if difficulty == "Easy":
+        #n = 80
         n = random.randint(36,45)
-    elif difficulty == "intermediate":
+    elif difficulty == "Intermediate":
         n = random.randint(32,35)
-    elif difficulty == "hard":
+    elif difficulty == "Hard":
         n = random.randint(28,31)
     else:
         n = random.randint(28, 45)
